@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 8
-  sprintSpeed: 16
+  sprintSpeed: 14
   acceleration: 7
   gravity: -35
   jumpForce: 12
