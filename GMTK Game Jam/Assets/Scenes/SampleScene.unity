@@ -510,7 +510,7 @@ MonoBehaviour:
   jumpForce: 12
   cameraHolder: {fileID: 1098863523}
   bobFrequency: 8
-  bobAmplitude: 0.05
+  bobAmplitude: 0.1
   sprintBobMultiplier: 1.5
   bobLerpSpeed: 10
 --- !u!43 &1953546922
