@@ -19,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 camStartLocalPos;
     private float bobTimer = 0f;
+    private float previousBobOffset = 0f;
+
+    [Header("Footstep Sound")]
+    public AudioSource footstepAudioSource;
+    public AudioClip footstepClip;
 
     private CharacterController controller;
     private Vector3 currentVelocity = Vector3.zero;
@@ -29,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         if (cameraHolder != null)
             camStartLocalPos = cameraHolder.localPosition;
+        if (footstepAudioSource == null)
+            footstepAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -66,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         currentVelocity.y = yVelocity;
         controller.Move(currentVelocity * Time.deltaTime);
 
-        // Head bobbing
+        // Head bobbing + footstep sound
         if (cameraHolder != null)
         {
             if (isMoving && grounded)
@@ -77,12 +84,22 @@ public class PlayerMovement : MonoBehaviour
                 float bobOffset = Mathf.Sin(bobTimer) * bobAmplitude * speedMultiplier;
                 Vector3 targetPos = camStartLocalPos + new Vector3(0, bobOffset, 0);
                 cameraHolder.localPosition = Vector3.Lerp(cameraHolder.localPosition, targetPos, bobLerpSpeed * Time.deltaTime);
+
+                // Play footstep at peak (from downward to upward movement)
+                if (previousBobOffset <= 0f && bobOffset > 0f)
+                {
+                    if (footstepAudioSource && footstepClip)
+                        footstepAudioSource.PlayOneShot(footstepClip);
+                }
+
+                previousBobOffset = bobOffset;
             }
             else
             {
-                // Reset bobbing
+                // Reset bob
                 cameraHolder.localPosition = Vector3.Lerp(cameraHolder.localPosition, camStartLocalPos, bobLerpSpeed * Time.deltaTime);
                 bobTimer = 0f;
+                previousBobOffset = 0f;
             }
         }
     }
