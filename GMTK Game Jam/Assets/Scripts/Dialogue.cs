@@ -27,6 +27,8 @@ public class Dialogue : MonoBehaviour
 
     [Header("Player Control")]
     public MouseLook mouseLookScript; // <-- Assign your MouseLook script here
+    public PlayerMovement playerMovement;
+    public NormalNPC npc;
 
     private int index;
     private bool isTyping = false;
@@ -42,6 +44,12 @@ public class Dialogue : MonoBehaviour
         // Find MouseLook once at start instead of every OnEnable
         if (mouseLookScript == null)
             mouseLookScript = FindAnyObjectByType<MouseLook>();
+        if (playerMovement == null)
+            playerMovement = FindAnyObjectByType<PlayerMovement>();
+        if (npc != null)
+        {
+            npc = FindAnyObjectByType<NormalNPC>();
+        }
 
         InitializeDialogue();
         // Reset all state when dialogue is enabled again
@@ -49,6 +57,8 @@ public class Dialogue : MonoBehaviour
         
         if (mouseLookScript != null)
             mouseLookScript.enabled = false;
+        if (playerMovement != null)
+            playerMovement.enabled = false;
         Cursor.lockState = CursorLockMode.None;
     }
 
@@ -226,6 +236,13 @@ public class Dialogue : MonoBehaviour
 
         if (mouseLookScript != null)
             mouseLookScript.enabled = true;
+        if (playerMovement != null)
+            playerMovement.enabled = true;
+
+        if (npc != null)
+        {
+            npc.WalkToSecondDestination();
+        }
     }
 
     private void OnDisable()
