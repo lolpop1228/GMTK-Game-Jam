@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         // Jump & gravity
         if (grounded)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown(KeyCode.Alpha9))
                 yVelocity = jumpForce;
             else if (yVelocity < 0f)
                 yVelocity = -1f;
