@@ -5,23 +5,51 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
+    [Header("Dialogue")]
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
     public float lineDelay = 1.5f;
+
+    [Header("Choice Panel")]
+    public GameObject choicesPanel;
+    public string[] choice1ResponseLines;
+    public string[] choice2ResponseLines;
+    public string[] choice3ResponseLines;
+
+    [Header("Transition")]
     public GameObject oldDialogue;
     public GameObject newDialogue;
+
+    [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip typingSound;
 
+    [Header("Player Control")]
+    public MouseLook mouseLookScript; // <-- Assign your MouseLook script here
+
     private int index;
     private bool isTyping = false;
+    private bool isChoiceResponse = false;
     private Coroutine typingCoroutine;
 
-    void Start()
+    private string[] currentResponseLines = null;
+    private int responseIndex = 0;
+    private bool isInResponse = false;
+
+    void OnEnable()
     {
-        textComponent.text = string.Empty;
-        StartDialogue();
+        // Find MouseLook once at start instead of every OnEnable
+        if (mouseLookScript == null)
+            mouseLookScript = FindAnyObjectByType<MouseLook>();
+
+        InitializeDialogue();
+        // Reset all state when dialogue is enabled again
+        ResetDialogueState();
+        
+        if (mouseLookScript != null)
+            mouseLookScript.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()
@@ -30,43 +58,89 @@ public class Dialogue : MonoBehaviour
         {
             if (isTyping)
             {
-                // Finish current line immediately
-                StopCoroutine(typingCoroutine);
-                textComponent.text = lines[index];
+                // Stop current typing and show complete text
+                if (typingCoroutine != null)
+                {
+                    StopCoroutine(typingCoroutine);
+                    typingCoroutine = null;
+                }
+
+                if (isInResponse)
+                    textComponent.text = currentResponseLines[responseIndex];
+                else
+                    textComponent.text = lines[index];
+
                 isTyping = false;
             }
             else
             {
-                // Move to next line
-                NextLine();
+                if (isInResponse)
+                    NextResponseLine();
+                else if (!isChoiceResponse)
+                    NextLine();
             }
         }
+    }
+
+    void InitializeDialogue()
+    {
+        if (choicesPanel != null)
+            choicesPanel.SetActive(false);
+
+        textComponent.text = string.Empty;
+        StartDialogue();
+    }
+
+    void ResetDialogueState()
+    {
+        // Clean up any running coroutines
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+
+        // Reset all state variables
+        index = 0;
+        isTyping = false;
+        isChoiceResponse = false;
+        isInResponse = false;
+        responseIndex = 0;
+        currentResponseLines = null;
+
+        // Reset UI
+        if (choicesPanel != null)
+            choicesPanel.SetActive(false);
+        
+        textComponent.text = string.Empty;
+        
+        // Start fresh dialogue
+        StartDialogue();
     }
 
     public void StartDialogue()
     {
         index = 0;
-        typingCoroutine = StartCoroutine(TypeLine());
+        typingCoroutine = StartCoroutine(TypeLine(lines[index]));
     }
 
-    IEnumerator TypeLine()
+    IEnumerator TypeLine(string line)
     {
         isTyping = true;
         textComponent.text = string.Empty;
 
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in line.ToCharArray())
         {
             textComponent.text += c;
 
             if (typingSound != null && audioSource != null)
-            {
                 audioSource.PlayOneShot(typingSound);
-            }
 
             yield return new WaitForSeconds(textSpeed);
         }
 
         isTyping = false;
+        typingCoroutine = null; // Clear reference when done
     }
 
     void NextLine()
@@ -74,7 +148,7 @@ public class Dialogue : MonoBehaviour
         if (index < lines.Length - 1)
         {
             index++;
-            typingCoroutine = StartCoroutine(TypeLine());
+            typingCoroutine = StartCoroutine(TypeLine(lines[index]));
         }
         else
         {
@@ -84,7 +158,8 @@ public class Dialogue : MonoBehaviour
 
     void EndDialogue()
     {
-        gameObject.SetActive(false);
+        if (choicesPanel != null)
+            choicesPanel.SetActive(true);
 
         if (oldDialogue != null)
             oldDialogue.SetActive(false);
@@ -93,11 +168,78 @@ public class Dialogue : MonoBehaviour
             newDialogue.SetActive(true);
     }
 
+    public void Choice1Answer()
+    {
+        HandleChoice(choice1ResponseLines);
+    }
+
+    public void Choice2Answer()
+    {
+        HandleChoice(choice2ResponseLines);
+    }
+
+    public void Choice3Answer()
+    {
+        HandleChoice(choice3ResponseLines);
+    }
+
+    void HandleChoice(string[] responseLines)
+    {
+        if (choicesPanel != null)
+            choicesPanel.SetActive(false);
+
+        isChoiceResponse = true;
+        isInResponse = true;
+        currentResponseLines = responseLines;
+        responseIndex = 0;
+        typingCoroutine = StartCoroutine(TypeLine(currentResponseLines[responseIndex]));
+    }
+
+    void NextResponseLine()
+    {
+        if (responseIndex < currentResponseLines.Length - 1)
+        {
+            responseIndex++;
+            typingCoroutine = StartCoroutine(TypeLine(currentResponseLines[responseIndex]));
+        }
+        else
+        {
+            EndResponseDialogue();
+        }
+    }
+
+    void EndResponseDialogue()
+    {
+        // Reset choice-related state
+        isChoiceResponse = false;
+        isInResponse = false;
+        currentResponseLines = null;
+        responseIndex = 0;
+
+        gameObject.SetActive(false);
+
+        if (oldDialogue != null)
+            oldDialogue.SetActive(false);
+
+        if (newDialogue != null)
+            newDialogue.SetActive(true);
+
+        if (mouseLookScript != null)
+            mouseLookScript.enabled = true;
+    }
+
     private void OnDisable()
     {
-        if (audioSource != null)
+        // Clean up when dialogue is disabled
+        if (typingCoroutine != null)
         {
-            audioSource.Stop();
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
         }
+
+        if (audioSource != null)
+            audioSource.Stop();
+        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
