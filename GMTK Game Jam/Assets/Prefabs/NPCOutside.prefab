@@ -2480,6 +2480,7 @@ MonoBehaviour:
   secondDestinationTag: Destination2
   moveSpeed: 1.5
   stopDistance: 0.5
+  npcEnterRoom: {fileID: 0}
 --- !u!114 &2820563667080527951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2605,9 +2606,121 @@ PrefabInstance:
       propertyPath: npc
       value: 
       objectReference: {fileID: 2049732327521813296}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: Good morning, doc!
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: I've been feeling sick for the past few days.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: "So I thought I\u2019d come to get it checked out."
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: May I go in?
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice1ResponseLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice3ResponseLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice1ResponseLines.Array.data[0]
+      value: Alright, thanks doc.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.data[0]
+      value: It's August 31st, why are you asking?
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.data[1]
+      value: Well, not like it matters, I'm coming in.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice3ResponseLines.Array.data[0]
+      value: How to open the Clinic's Storage Room?
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice3ResponseLines.Array.data[1]
+      value: I have no idea, sorry doc.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice3ResponseLines.Array.data[2]
+      value: Anyways, I'm coming in.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_text
+      value: Yeah, come in
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 85449bddb1576524394a01da1aa29f77, type: 2}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3023916067354774224, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: m_Name
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_text
+      value: What's the date today?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 85449bddb1576524394a01da1aa29f77, type: 2}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_text
+      value: How do I open the Storage Room?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 85449bddb1576524394a01da1aa29f77, type: 2}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8566663291348530405, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: m_Pivot.x

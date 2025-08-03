@@ -2629,6 +2629,82 @@ PrefabInstance:
       propertyPath: kYS
       value: 
       objectReference: {fileID: 7939088516737559906}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: '*talks about his illness*'
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: Alright, thanks doc!
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: By the way, I found this green cube in front of the clinic.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: Is it yours?
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice1ResponseLines.Array.data[0]
+      value: Oh, okay.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice1ResponseLines.Array.data[1]
+      value: I'll get going now, see you later!
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.data[0]
+      value: Anything else?
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.data[1]
+      value: Well, I also found a piece of paper right besides it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.data[2]
+      value: I believe it said... 731
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.data[3]
+      value: No idea what those numbers are for
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice2ResponseLines.Array.data[4]
+      value: Anyways, I'll get going now, see you later!
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice3ResponseLines.Array.data[0]
+      value: Okay, have it back.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: choice3ResponseLines.Array.data[1]
+      value: I'll get going now, see you later!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_text
+      value: No, it's not mine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 85449bddb1576524394a01da1aa29f77, type: 2}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688153541835491068, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -2660,6 +2736,46 @@ PrefabInstance:
     - target: {fileID: 3023916067354774224, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: m_Name
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_text
+      value: Did you find anything else?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 85449bddb1576524394a01da1aa29f77, type: 2}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509732821109097384, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_text
+      value: Yup, can I have it back?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 85449bddb1576524394a01da1aa29f77, type: 2}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615469310235465419, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8566663291348530405, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: m_Pivot.x

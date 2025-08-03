@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/mainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 3f1397be2ba3f4740ac2e6ecab52093a
   - enabled: 1
     path: Assets/Scenes/IntroTitle.unity
@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Looped.unity
     guid: 89b76bce280058040bd149b2d9949a9e
+  - enabled: 1
+    path: Assets/Scenes/HomeNightEnding.unity
+    guid: 9fa343fc8811b3043bbddf3e137ced51
+  - enabled: 1
+    path: Assets/Scenes/EndTitle.unity
+    guid: 9228cfc9ecf9f0941a09736e57c09840
   m_configObjects: {}
