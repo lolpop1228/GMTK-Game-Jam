@@ -32,4 +32,10 @@ public static class PlayerInventory
                 items.Remove(itemName);
         }
     }
+
+    public static void ClearInventory()
+    {
+        items.Clear();
+    }
 }
+

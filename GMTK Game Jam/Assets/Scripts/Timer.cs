@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // Assign in Inspector
     public int totalTimeInSeconds = 300; // 5 minutes
     public GameObject Keys;
+    public string sceneToLoad;
 
     private float remainingTime;
     private bool isRunning = false;
@@ -29,6 +31,7 @@ public class Timer : MonoBehaviour
         {
             remainingTime = 0;
             isRunning = false;
+            SceneManager.LoadScene(sceneToLoad);
         }
 
         UpdateTimerDisplay();
