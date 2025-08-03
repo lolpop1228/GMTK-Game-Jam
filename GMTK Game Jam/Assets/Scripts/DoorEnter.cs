@@ -6,15 +6,19 @@ public class DoorEnter : MonoBehaviour, IInteractable
 {
     public Transform entrancePoint;
     public GameObject player;
+    public AudioClip teleportSound; // Sound to play when teleporting
+    private AudioSource audioSource; // AudioSource to play the sound
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = player.GetComponent<AudioSource>(); // Assumes the player has an AudioSource component
     }
 
     public void Interact()
     {
         Teleport();
+        PlayTeleportSound();
     }
 
     private void Teleport()
@@ -29,6 +33,14 @@ public class DoorEnter : MonoBehaviour, IInteractable
                 player.transform.rotation = entrancePoint.rotation;
                 cc.enabled = true;
             }
+        }
+    }
+
+    private void PlayTeleportSound()
+    {
+        if (teleportSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(teleportSound);
         }
     }
 }

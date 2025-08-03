@@ -27523,6 +27523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrancePoint: {fileID: 900042670}
   player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!1 &97705767
 GameObject:
   m_ObjectHideFlags: 0
@@ -29850,7 +29851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2589156767839341087, guid: 02930babdb3a1f647b0cdd739434c9ab, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2589156767839341087, guid: 02930babdb3a1f647b0cdd739434c9ab, type: 3}
       propertyPath: m_LocalRotation.x
@@ -29858,7 +29859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2589156767839341087, guid: 02930babdb3a1f647b0cdd739434c9ab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2589156767839341087, guid: 02930babdb3a1f647b0cdd739434c9ab, type: 3}
       propertyPath: m_LocalRotation.z
@@ -29870,7 +29871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2589156767839341087, guid: 02930babdb3a1f647b0cdd739434c9ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2589156767839341087, guid: 02930babdb3a1f647b0cdd739434c9ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -34128,7 +34129,8 @@ GameObject:
   - component: {fileID: 877308177}
   - component: {fileID: 877308179}
   - component: {fileID: 877308178}
-  m_Layer: 0
+  - component: {fileID: 877308180}
+  m_Layer: 7
   m_Name: Doorhandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34200,6 +34202,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877308176}
   m_Mesh: {fileID: 6606771647358567538, guid: dfd184ccc1d08f54cb9b1894a4e9c26c, type: 3}
+--- !u!114 &877308180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877308176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9990582ee975d5d40b39232b6dd298f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: HomeNight
 --- !u!1 &877674588
 GameObject:
   m_ObjectHideFlags: 0
@@ -34391,7 +34406,7 @@ Transform:
   m_GameObject: {fileID: 900042669}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.29, y: 1.0865567, z: -17.832}
+  m_LocalPosition: {x: 4.29, y: 2.336557, z: -17.832}
   m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38134,7 +38149,8 @@ GameObject:
   - component: {fileID: 1329314962}
   - component: {fileID: 1329314961}
   - component: {fileID: 1329314960}
-  m_Layer: 0
+  - component: {fileID: 1329314963}
+  m_Layer: 7
   m_Name: Doormain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38228,6 +38244,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329314958}
   m_Mesh: {fileID: -7816934897310666430, guid: dfd184ccc1d08f54cb9b1894a4e9c26c, type: 3}
+--- !u!114 &1329314963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329314958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9990582ee975d5d40b39232b6dd298f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: HomeNight
 --- !u!1 &1332043612
 GameObject:
   m_ObjectHideFlags: 0
@@ -67384,6 +67413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrancePoint: {fileID: 46463160}
   player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!65 &1846983824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73753,6 +73783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrancePoint: {fileID: 222436898}
   player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!4 &6463282788506507021
 Transform:
   m_ObjectHideFlags: 0
@@ -74239,6 +74270,7 @@ GameObject:
   - component: {fileID: 3279582030619945566}
   - component: {fileID: 4311565494525714977}
   - component: {fileID: 3319332493169052323}
+  - component: {fileID: 7221148579000446195}
   m_Layer: 7
   m_Name: Door.001
   m_TagString: Untagged
@@ -74246,6 +74278,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &7221148579000446195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221148579000446194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0488bc586d3de0c44a9097552a698c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entrancePoint: {fileID: 222436898}
+  player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!1 &7330479602401077025
 GameObject:
   m_ObjectHideFlags: 0
@@ -75496,8 +75543,7 @@ GameObject:
   - component: {fileID: 2378358346695629385}
   - component: {fileID: 3520322288067896426}
   - component: {fileID: 9141567728836774816}
-  - component: {fileID: 9141567728836774817}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Doormain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75676,19 +75722,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.081970565, y: 0.009369426, z: 0.17260163}
   m_Center: {x: 0.000000011175869, y: 0.00000011920929, z: 0}
---- !u!114 &9141567728836774817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8965543010711579872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9990582ee975d5d40b39232b6dd298f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: HomeNight
 --- !u!33 &9189667459836343401
 MeshFilter:
   m_ObjectHideFlags: 0

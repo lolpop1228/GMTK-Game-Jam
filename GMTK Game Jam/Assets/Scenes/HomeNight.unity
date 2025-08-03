@@ -265,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrancePoint: {fileID: 1107340031}
   player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!1 &102678185
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrancePoint: {fileID: 321999497}
   player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!65 &188021198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3182,6 +3184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrancePoint: {fileID: 321999497}
   player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!1 &883998805
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,6 +3305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrancePoint: {fileID: 1107340031}
   player: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: c8a15a6e4ac555b49a34c2ede7760df5, type: 3}
 --- !u!1 &913967172
 GameObject:
   m_ObjectHideFlags: 0
