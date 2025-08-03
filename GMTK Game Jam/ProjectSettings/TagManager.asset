@@ -8,6 +8,7 @@ TagManager:
   - Destination
   - NPCPoint
   - Destination2
+  - NPC
   layers:
   - Default
   - TransparentFX

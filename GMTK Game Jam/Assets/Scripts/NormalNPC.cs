@@ -7,6 +7,7 @@ public class NormalNPC : MonoBehaviour
     public string secondDestinationTag = "Destination2";
     public float moveSpeed = 3f;
     public float stopDistance = 0.5f;
+    public NPCEnterRoom npcEnterRoom;
 
     private Rigidbody rb;
     private Animator animator;
@@ -21,6 +22,7 @@ public class NormalNPC : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         animator = GetComponent<Animator>();
+        npcEnterRoom = FindAnyObjectByType<NPCEnterRoom>();
 
         // Walk to first destination immediately
         SetDestinationByTag(firstDestinationTag);
@@ -59,9 +61,10 @@ public class NormalNPC : MonoBehaviour
             if (goingToSecondDestination && !reachedSecond)
             {
                 reachedSecond = true;
+                npcEnterRoom.EnterRoom();
                 Debug.Log($"{gameObject.name} reached SECOND destination and will disappear.");
                 transform.rotation = Quaternion.Euler(0f, destination.eulerAngles.y, 0f);
-                Destroy(gameObject, 1f);
+                Destroy(gameObject, .5f);
             }
             else if (!goingToSecondDestination)
             {

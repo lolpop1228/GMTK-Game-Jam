@@ -29,6 +29,7 @@ public class Dialogue : MonoBehaviour
     public MouseLook mouseLookScript; // <-- Assign your MouseLook script here
     public PlayerMovement playerMovement;
     public NormalNPC npc;
+    public KYS kYS;
 
     private int index;
     private bool isTyping = false;
@@ -242,6 +243,11 @@ public class Dialogue : MonoBehaviour
         if (npc != null)
         {
             npc.WalkToSecondDestination();
+        }
+
+        if (kYS != null)
+        {
+            kYS.Die();
         }
     }
 
