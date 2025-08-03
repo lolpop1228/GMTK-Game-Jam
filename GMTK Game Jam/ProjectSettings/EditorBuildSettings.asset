@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroTitle.unity
     guid: 498599c6fd03a0947b1f11fb660ef75a
   - enabled: 1
-    path: Assets/Scenes/Home.unity
+    path: Assets/Scenes/HomeDay.unity
     guid: 243233f17921c984c882cfa5177d650e
   - enabled: 1
     path: Assets/Scenes/clinic.unity
     guid: 3dcf4777120a349439f5662f709d2d07
+  - enabled: 1
+    path: Assets/Scenes/HomeNight.unity
+    guid: 07c54f4a803310f48b25b525150de5c4
+  - enabled: 1
+    path: Assets/Scenes/Looped.unity
+    guid: 89b76bce280058040bd149b2d9949a9e
   m_configObjects: {}
