@@ -18343,21 +18343,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1565682000
-MonoBehaviour:
+--- !u!320 &1565682000
+PlayableDirector:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565681998}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87a6862b3fa6074fa2afe891a6c6bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayBeforeShowing: 2
-  showDuration: 5
-  gameObject: {fileID: 65533458}
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 4d76f9ce2bd230f4692d4c10f3f4fbed, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -675127047612081774, guid: 4d76f9ce2bd230f4692d4c10f3f4fbed, type: 2}
+    value: {fileID: 65533458}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1594894812
 GameObject:
   m_ObjectHideFlags: 0
