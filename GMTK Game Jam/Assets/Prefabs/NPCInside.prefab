@@ -2497,9 +2497,9 @@ MonoBehaviour:
   messageText3: {fileID: 4106068055193539978}
   activateDoor: {fileID: 0}
   timer: {fileID: 0}
-  displayMessage1: Your work is done.
-  displayMessage2: Explore this place for a clue.
-  displayMessage3: Before time runs out.
+  displayMessage1: 
+  displayMessage2: Your shift's over.
+  displayMessage3: Go home or explore for a bit.
   fadeDuration: 2
   displayDuration: 1
 --- !u!114 &7937481928125880395
@@ -2639,7 +2639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: lines.Array.data[2]
-      value: By the way, I found this green cube in front of the clinic.
+      value: By the way, I found this glue in front of the clinic.
       objectReference: {fileID: 0}
     - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: lines.Array.data[3]
@@ -2667,11 +2667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: choice2ResponseLines.Array.data[2]
-      value: I believe it said... 731
+      value: I believe it says... "Today is the answer you're looking for."
       objectReference: {fileID: 0}
     - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: choice2ResponseLines.Array.data[3]
-      value: No idea what those numbers are for
+      value: No idea what that is supposed to mean.
       objectReference: {fileID: 0}
     - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: choice2ResponseLines.Array.data[4]

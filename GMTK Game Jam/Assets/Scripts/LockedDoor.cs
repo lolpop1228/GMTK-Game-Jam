@@ -11,6 +11,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
     public string requiredGlueName = "Glue";
     public int requiredGlueAmount = 1;
     public GameObject textDisplay;
+    public GameObject textDisplay2;
     public float displayAmount = 1.5f;
     public AudioSource audioSource;
     public AudioClip audioClip;
@@ -31,6 +32,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
             isLocked = false;
             PlayerInventory.RemoveItem(requiredKeyName, requiredKeyAmount);
             PlayerInventory.RemoveItem(requiredGlueName, requiredGlueAmount);
+            ShowText2();
             OpenDoor();
         }
         else
@@ -64,5 +66,17 @@ public class LockedDoor : MonoBehaviour, IInteractable
         textDisplay.SetActive(true);
         yield return new WaitForSeconds(displayAmount);
         textDisplay.SetActive(false);
+    }
+
+    void ShowText2()
+    {
+        StartCoroutine(EnableAndDisable2());
+    }
+
+    private IEnumerator EnableAndDisable2()
+    {
+        textDisplay2.SetActive(true);
+        yield return new WaitForSeconds(displayAmount);
+        textDisplay2.SetActive(false);
     }
 }

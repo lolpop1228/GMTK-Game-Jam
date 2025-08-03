@@ -2640,7 +2640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: choice2ResponseLines.Array.data[0]
-      value: It's August 31st, why are you asking?
+      value: It's Thursday, 7/31, why are you asking?
       objectReference: {fileID: 0}
     - target: {fileID: 515742178076009745, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: choice2ResponseLines.Array.data[1]

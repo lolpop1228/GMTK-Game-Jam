@@ -14,7 +14,7 @@ public class KeyItem : MonoBehaviour, IInteractable
         int count = PlayerInventory.GetItemCount(keyName);
         if (keyCountText != null)
         {
-            keyCountText.text = $"Keys: {count} / {requiredKeyAmount}";
+            keyCountText.text = $"Keycard fragments: {count} / {requiredKeyAmount}";
             keyCountText.gameObject.SetActive(true);
         }
 
