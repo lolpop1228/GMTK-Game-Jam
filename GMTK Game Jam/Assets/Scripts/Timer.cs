@@ -3,21 +3,20 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public TextMeshProUGUI timerText; // Assign this in the Inspector
-    public int totalTimeInSeconds = 300; // 5 minutes = 300 seconds
+    public TextMeshProUGUI timerText; // Assign in Inspector
+    public int totalTimeInSeconds = 300; // 5 minutes
+    public GameObject Keys;
 
     private float remainingTime;
-    private bool isRunning = true;
+    private bool isRunning = false;
 
     void Start()
     {
-        TimerStart();
-    }
-
-    public void TimerStart()
-    {
-        remainingTime = totalTimeInSeconds;
-        UpdateTimerDisplay();
+        timerText.text = ""; // Hide text at the beginning
+        if (Keys != null)
+        {
+            Keys.SetActive(false);
+        }
     }
 
     void Update()
@@ -32,6 +31,17 @@ public class Timer : MonoBehaviour
             isRunning = false;
         }
 
+        UpdateTimerDisplay();
+    }
+
+    public void TimerStart()
+    {
+        remainingTime = totalTimeInSeconds;
+        isRunning = true;
+        if (Keys != null)
+        {
+            Keys.SetActive(true);
+        }
         UpdateTimerDisplay();
     }
 

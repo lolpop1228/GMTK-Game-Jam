@@ -6,45 +6,38 @@ interface IInteractable
 {
     public void Interact();
 }
-
 public class InteractionSystem : MonoBehaviour
 {
     public Transform InteractorSource;
-    public float InteractRange;
+    public float InteractRange = 3f;
     public LayerMask InteractableLayer;
+    public LayerMask ObstacleLayer;
     public GameObject interactUI;
 
     private void Update()
     {
         Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-        
-        if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange, InteractableLayer))
+
+        if (Physics.Raycast(r, out RaycastHit hit, InteractRange, InteractableLayer))
         {
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+            // Check if there’s an obstacle between the player and the interactable
+            if (!Physics.Raycast(r, hit.distance, ObstacleLayer))
             {
-                if (interactUI != null)
+                if (hit.collider.TryGetComponent(out IInteractable interactObj))
                 {
-                    interactUI.gameObject.SetActive(true);
+                    if (interactUI != null)
+                        interactUI.SetActive(true);
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                        interactObj.Interact();
+
+                    return; // Exit early if successful
                 }
-            }    
-        }
-        else
-        {
-            if (interactUI != null)
-            {
-                interactUI.gameObject.SetActive(false);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (Physics.Raycast(r, out RaycastHit hitInfoInteract, InteractRange, InteractableLayer))
-            {
-                if (hitInfoInteract.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-                {
-                    interactObj.Interact();
-                }
-            }
-        }
+        if (interactUI != null)
+            interactUI.SetActive(false);
     }
 }
+

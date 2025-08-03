@@ -2306,6 +2306,7 @@ GameObject:
   - component: {fileID: 6243829305484564516}
   - component: {fileID: 2820563667080527951}
   - component: {fileID: 7939088516737559906}
+  - component: {fileID: 7937481928125880395}
   m_Layer: 7
   m_Name: NPCInside
   m_TagString: NPC
@@ -2495,11 +2496,28 @@ MonoBehaviour:
   messageText2: {fileID: 323735324114371181}
   messageText3: {fileID: 4106068055193539978}
   activateDoor: {fileID: 0}
+  timer: {fileID: 0}
   displayMessage1: Your work is done.
   displayMessage2: Explore this place for a clue.
   displayMessage3: Before time runs out.
   fadeDuration: 2
   displayDuration: 1
+--- !u!114 &7937481928125880395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8955180698201447036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc46b39c2c80a13479b54211584f5d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: Glue
+  textTag: PickUpText
+  itemPickupText: {fileID: 0}
+  messageDuration: 2
 --- !u!1 &8971174985679525798
 GameObject:
   m_ObjectHideFlags: 0

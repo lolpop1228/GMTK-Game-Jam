@@ -8,6 +8,7 @@ public class KYS : MonoBehaviour
     public TextMeshProUGUI messageText2; // Assign in Inspector
     public TextMeshProUGUI messageText3; // Assign in Inspector
     public ActivateDoor activateDoor;
+    public Timer timer;
 
     public string displayMessage1 = "Goodbye...";
     public string displayMessage2 = "You have been deleted.";
@@ -21,6 +22,7 @@ public class KYS : MonoBehaviour
     void Start()
     {
         activateDoor = FindAnyObjectByType<ActivateDoor>();
+        timer = FindAnyObjectByType<Timer>();
     }
 
     public void Die()
@@ -31,13 +33,16 @@ public class KYS : MonoBehaviour
         SetupText(messageText1, displayMessage1);
         SetupText(messageText2, displayMessage2);
         SetupText(messageText3, displayMessage3);
-        activateDoor.DoorActivate();
+
+        if (activateDoor != null)
+            activateDoor.DoorActivate();
 
         if (messageText1 || messageText2 || messageText3)
             StartCoroutine(FadeAndDestroy());
         else
             Destroy(gameObject);
     }
+
 
     private void SetupText(TextMeshProUGUI text, string message)
     {
@@ -59,8 +64,13 @@ public class KYS : MonoBehaviour
         if (messageText2 != null) messageText2.gameObject.SetActive(false);
         if (messageText3 != null) messageText3.gameObject.SetActive(false);
 
+        // ✅ Now start the timer after fading out
+        if (timer != null)
+            timer.TimerStart();
+
         Destroy(gameObject);
     }
+
 
     private IEnumerator FadeText(float startAlpha, float endAlpha, float duration)
     {
