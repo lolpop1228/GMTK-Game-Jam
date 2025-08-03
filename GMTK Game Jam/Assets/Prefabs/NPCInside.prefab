@@ -2629,6 +2629,34 @@ PrefabInstance:
       propertyPath: kYS
       value: 
       objectReference: {fileID: 7939088516737559906}
+    - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7937481928125880395}
+    - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GlueAdd
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AddGlue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789788542595766285, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3023916067354774224, guid: aec2895b30e7a4d4bab9a10b0b4367c2, type: 3}
       propertyPath: m_Name
       value: Dialogue

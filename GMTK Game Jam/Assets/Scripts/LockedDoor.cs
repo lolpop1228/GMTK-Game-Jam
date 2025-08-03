@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class LockedDoor : MonoBehaviour, IInteractable
 {
@@ -9,6 +10,8 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
     public string requiredGlueName = "Glue";
     public int requiredGlueAmount = 1;
+    public GameObject textDisplay;
+    public float displayAmount = 1.5f;
     public AudioSource audioSource;
     public AudioClip audioClip;
 
@@ -37,6 +40,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
             Debug.Log($"It's locked. You need {requiredKeyAmount} GoldKeys and {requiredGlueAmount} Glue.");
             Debug.Log($"You have {currentKeys} GoldKeys and {currentGlue} Glue.");
+            ShowText();
             if (audioSource != null)
             {
                 audioSource.PlayOneShot(audioClip);
@@ -48,5 +52,17 @@ public class LockedDoor : MonoBehaviour, IInteractable
     private void OpenDoor()
     {
         gameObject.SetActive(false); // Replace with animation if needed
+    }
+
+    void ShowText()
+    {
+        StartCoroutine(EnableAndDisable());
+    }
+
+    private IEnumerator EnableAndDisable()
+    {
+        textDisplay.SetActive(true);
+        yield return new WaitForSeconds(displayAmount);
+        textDisplay.SetActive(false);
     }
 }
