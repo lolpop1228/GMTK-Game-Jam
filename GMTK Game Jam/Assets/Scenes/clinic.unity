@@ -75496,7 +75496,8 @@ GameObject:
   - component: {fileID: 2378358346695629385}
   - component: {fileID: 3520322288067896426}
   - component: {fileID: 9141567728836774816}
-  m_Layer: 0
+  - component: {fileID: 9141567728836774817}
+  m_Layer: 7
   m_Name: Doormain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75675,6 +75676,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.081970565, y: 0.009369426, z: 0.17260163}
   m_Center: {x: 0.000000011175869, y: 0.00000011920929, z: 0}
+--- !u!114 &9141567728836774817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965543010711579872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9990582ee975d5d40b39232b6dd298f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: HomeNight
 --- !u!33 &9189667459836343401
 MeshFilter:
   m_ObjectHideFlags: 0
